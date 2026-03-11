@@ -356,4 +356,5 @@ tab.execute({javascript: `
 | Trying CDP/DevTools for real sites | Use AppleScript — undetectable |
 | **Triggering download without running auto_save_dialog.js** | **ALWAYS run `/tmp/auto_save_dialog.js` immediately after ANY download trigger. The save dialog WILL appear and block forever if not handled. This is the #1 most common mistake.** |
 | Setting `prompt_for_download = False` | NEVER do this — blob/JS downloads silently fail. Keep it `True` and use auto_save_dialog.js |
+| **Using Print / window.print() / Cmd+P** | **NEVER use print. The macOS print dialog blocks AppleScript with a -1712 timeout error and cannot be automated. Instead, save page content as HTML and convert to PDF with `textutil`+`cupsfilter`, or take a screenshot.** |
 | Ignoring multi-file download prompt | Auto-accept or tell user to click Allow (pattern #10) |
